@@ -447,8 +447,101 @@
     };
 
 // Inicialize o Firebase
+firebase.initializeApp(firebaseConfig);
 
-    firebase.initializeApp(firebaseConfig);
+function login() {
+  var email = document.getElementById('login-email').value;
+  var password = document.getElementById('login-password').value;
+
+  // Verificar se os campos estão vazios
+  if (email.trim() === '' || password.trim() === '') {
+    alert('Por favor, preencha todos os campos.');
+    return;
+  }
+
+  // Validação do email
+  if (!validateEmail(email)) {
+    alert('Por favor, insira um email válido.');
+    return;
+  }
+
+  // Validação da senha
+  if (!validatePassword(password)) {
+    alert('A senha deve ter pelo menos 8 caracteres.');
+    return;
+  }
+
+  // Tente fazer o login com Firebase Authentication
+  firebase.auth().signInWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      // Login bem-sucedido
+      var user = userCredential.user;
+      console.log('Usuário logado:', user);
+      alert('Login bem-sucedido!');
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.error('Erro ao logar:', errorCode, errorMessage);
+      alert('Erro ao logar: ' + errorMessage);
+    });
+}
+
+function signup() {
+  var name = document.getElementById('signup-name').value;
+  var email = document.getElementById('signup-email').value;
+  var password = document.getElementById('signup-password').value;
+  var phone = document.getElementById('signup-phone').value;
+
+  // Verificar se os campos estão vazios
+  if (name.trim() === '' || email.trim() === '' || password.trim() === '' || phone.trim() === '') {
+    alert('Por favor, preencha todos os campos.');
+    return;
+  }
+
+  // Validação do email
+  if (!validateEmail(email)) {
+    alert('Por favor, insira um email válido.');
+    return;
+  }
+
+  // Validação da senha
+  if (!validatePassword(password)) {
+    alert('A senha deve ter pelo menos 8 caracteres.');
+    return;
+  }
+
+  // Validação do telefone
+  if (!validatePhone(phone)) {
+    alert('Por favor, insira um número de telefone válido.');
+    return;
+  }
+
+  // Código para criar o usuário com os dados fornecidos
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      // Criação do usuário bem-sucedida
+      var user = userCredential.user;
+      console.log('Usuário criado:', user);
+
+      // Aqui você pode adicionar mais ações, como salvar informações adicionais do usuário no banco de dados
+
+      // Mensagem de sucesso
+      alert('Cadastro realizado com sucesso!');
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.error('Erro ao criar o usuário:', errorCode, errorMessage);
+      alert('Erro ao criar o usuário: ' + errorMessage);
+    });
+}
+
+
+
+
+
+
 
 </script>
 <script class="blurred">
