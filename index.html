@@ -6,17 +6,35 @@
     <title>Rodrigo Marques | Saúde Mental |</title>
     <link rel="icon" href="https://i.ibb.co/d4wt5gr2/logo-criativar-transparente-fazer-gif-1.png" type="image/png">
     <style>
-        body {
+         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            background-color: #a9c1e7;
+            background: linear-gradient(180deg,  #5a73ad 12%, #8135b4 50%,#fc1717 80%, #ffe70e 100%);
+            background-size:500% 500%;
+            animation: gradient 5s ease infinite;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: center; 
             min-height: 100vh;
             position: relative;
             overflow: hidden;
+            background-blend-mode: multiply;
+            background-repeat: no-repeat;
+            background-position: 0% 0%;
+            transition: background-position 0.5s ease-out;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 0%;
+            }
+            50% {
+                background-position: 100% 100%;
+            }
+            100% {
+                background-position: 0% 0%;
+            }
         }
 
         .texture {
@@ -28,9 +46,11 @@
             height: 100%;
             background-image: url(https://i.ibb.co/Mp5fm07/image-1.png); 
             background-repeat: repeat;
-            opacity: 0.3; /* Ajuste a opacidade aqui */
+            opacity: 0.9; /* Ajuste a opacidade aqui */
             z-index: -1;
+            filter: blur(12px);
         }
+       
 
         .logo {
             width: 410px;
