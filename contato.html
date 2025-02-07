@@ -1,24 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-    
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>| Contato |</title>
-    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js"></script>
-    <link rel="icon" href="https://i.ibb.co/N9ZbZ9Q/logoapenas-FAVICON.png" type="image/png">
+    <title>| Contato | </title>
+    <link rel="icon" href="https://i.ibb.co/d4wt5gr2/logo-criativar-transparente-fazer-gif-1.png" type="image/png">
     <style>
-
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            background-color: #5e6c81;
+            background-color: #a9c1e7;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
+            justify-content: center; 
             min-height: 100vh;
             position: relative;
             overflow: hidden;
@@ -33,7 +28,7 @@
             height: 100%;
             background-image: url(https://i.ibb.co/Mp5fm07/image-1.png); 
             background-repeat: repeat;
-            opacity: 0.3;
+            opacity: 0.3; /* Ajuste a opacidade aqui */
             z-index: -1;
         }
 
@@ -41,9 +36,15 @@
             margin-top: 20px;
             width: 300px;
             height: 300px;
+	
             border-radius: 30%;
-            background: url('https://i.ibb.co/LPg2HHC/LOGOFERATUALIZADA2.gif') no-repeat center center / cover;
-        }
+            background: url('https://i.ibb.co/3Y1W8QSW/logo-criativar-transpawwwwwwrente-fazer-gif.gif') no-repeat center center / cover;
+	   
+ 	}
+	    
+	
+
+	
 
         .slider-container {
             position: relative;
@@ -56,12 +57,16 @@
             margin: 20px 0;
             cursor: pointer;
             transition: width 0.5s ease, border-radius 0.5s ease;
+	    
         }
+	
+
 
         .slider-container.expanded {
-            width: 60%;
-            max-width: 320px;
-            border-radius: 70px;
+            width: 70%;
+            max-width: 400px;
+            border-radius: 30px;
+	    
         }
 
         .slider {
@@ -84,17 +89,20 @@
         }
 
         #slider-whatsapp {
-            background-color: #3de296;
+            background-color: #25d366;
         }
 
         #slider-email {
             background-color: #3b5998;
         }
+        #slider-instagram {
+            background-color: #E4405F;
+        }
 
         .arrow-container {
             position: absolute;
             top: 50%;
-            left: 45px;
+            left: 70px;
             transform: translateY(-50%);
             display: flex;
             align-items: center;
@@ -108,7 +116,8 @@
         }
 
         .arrow {
-            width: 45px;
+            font-size: 24px;
+            color: #696969;
             animation: blink 1.5s infinite;
         }
 
@@ -123,253 +132,9 @@
             50% { opacity: 0.5; }
             100% { opacity: 1; }
         }
-
-        #chat-head {
-    display: none;
-    position: relative;
-    bottom: 210px;
-    transform: translate(-50%, -50%) scale(0.01);
-    width: 85px;
-    height: 85px;
-   
-    z-index: 10;
-    cursor: pointer;
-    transition: transform 0.5s ease;
-
-        }
-
-        #chat-head img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            box-sizing: border-box; /* Inclui a borda dentro das dimensões da imagem */
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
-            
-            
-            
-
-            
-        }
-
-        #message-indicator {
-            position: absolute;
-            top: -9%;
-            right: -2%;
-            width: 25px;
-            height: 25px;
-            background-color: red;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            font-weight: bold;
-        }
-
-        #chat-window {
-            display: none;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 300px;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            background-color: white;
-        }
-        #close-chat {
-    position: absolute; 
-    top: 1px; 
-    right: -15px;
-    border: none; /* Remova a borda do botão */
-    background: none; /* Remova o background do botão */
-}
-#close-chat img {
-    width: 25px; /* Define a largura do ícone */
-    height: 25px; /* Define a altura do ícone */
-    border: none; /* Remova a borda do botão */
-    background: none; /* Remova o background do botão */
-}
-#close-chat .animated-icon {
-    display: none; /* Esconde o ícone animado por padrão */
-}
-
-#close-chat:hover .static-icon {
-    display: none; /* Esconde o ícone estático quando passa o mouse */
-}
-
-#close-chat:hover .animated-icon {
-    display: block; /* Mostra o ícone animado quando passa o mouse */
-}
-
-
-
-
- 
-
-        .chat-header {
-            display: flex;
-            align-items: center;
-            background-color: #25d366;
-            color: white;
-            font-weight: bold;
-            padding: 10px;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-        }
-
-        .chat-header img {
-            width: 50px;
-            height: 50px;
-            margin-right: 10px;
-            border-radius: 50%;
-        }
-        .chat-header span {
-            flex-grow: 1;
-        }
-
-        .chat-messages {
-            padding: 13px;
-            overflow-y: auto;
-            background-color: #c4e7eb;
-            text-align: center;
-}
-
-     .message-received::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 10px;
-    border-color: transparent rgb(52, 183, 241, 0.36) transparent transparent;
-    bottom: -20px;
-    left: -7%;
-    top: 34.9px;
-}
-
-.message-received {
-   
-  background-color: rgba(52, 183, 241, 0.4); 
-  padding: 15px;
-  border-radius: 20px; /* Dá a forma de bolha */
-  box-shadow: 0 7px 8px rgba(0, 0, 0, 0.5);
-  position: relative; /* Necessário para os pseudo-elementos */
-  top: -7px;
-  left: 1px;
-  margin-bottom: 10px;
-}
-.message-received p {
-    font-weight: bold;
-    margin: 1px; remove o espaçamento padrão do parágrafo 
-  font-size: 16px;  define o tamanho da fonte do texto 
-  line-height: 1.5;  define o espaçamento entre linhas do texto 
-
-  color: #353535;
-
-} 
-
-
-
- 
-
-/* CSS code 
-.message-received {
-  background-color: #DCF8C6; /* define a cor de fundo do balão 
-  border-radius: 10px; /* define o raio das bordas do balão 
-  padding: 10px; /* define o espaçamento interno do balão 
-  max-width: 70%; /* define a largura máxima do balão 
-  margin-bottom: 10px; /* define o espaçamento inferior do balão 
-}
-
-.message-received p {
-  margin: 1px; remove o espaçamento padrão do parágrafo 
-  font-size: 16px;  define o tamanho da fonte do texto 
-  line-height: 1.5;  define o espaçamento entre linhas do texto 
-} 
-*/
-
-
-
-
-
-
-
-
-.chat-messages button {
-            width: calc(100% - 20px);
-            margin: 7px;
-            padding: 10px;
-            background-color: #25d366;
-            border: none;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .chat-messages button:hover {
-            background-color: #128C7E;
-        }
-
-        .chat-messages input {
-            width: calc(100% - 41px);
-            margin: 5px 10px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-
-        .hidden {
-            display: none;
-        }
-        .fadeIn {
-            animation: fadeIn 0.5s forwards;
-        }
-        .fadeOut {
-            animation: fadeOut 0.5s forwards;
-        }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-        @keyframes fadeOut {
-            from {
-                opacity: 1;
-                transform: scale(1);
-            }
-            to {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-     }
-        
-
-        .blurred {
-            filter: blur(5px);
-        }
-
-        @keyframes bouncing {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-
-        #chat-head.bouncing {
-            animation: bouncing 1s infinite;
-        }
-
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-
 <body>
     <div class="texture"></div>
     <div class="logo"></div>
@@ -379,8 +144,8 @@
             <img src="https://i.ibb.co/bBWt1xJ/novoiconwpp.gif" alt="WhatsApp">
         </div>
         <div class="arrow-container">
-            <span class="arrow"><img src="https://i.ibb.co/T2h62Rw/right-arrowgif-1.gif"></span>
-            <span class="text">Arraste para o lado!</span>
+            <span class="arrow"><i class="fas fa-arrow-right"></i></span>
+            <span class="text">      Arraste para o lado! </span>
         </div>
     </div>
     <div class="slider-container" id="email">
@@ -388,158 +153,21 @@
             <img src="https://i.ibb.co/4ZZmX2p/mail.gif" alt="Email">
         </div>
         <div class="arrow-container">
-            <span class="arrow"><img src="https://i.ibb.co/7NpnZfy/right-arrowgif1-ezgif-com-gif-maker.gif"></span>
+            <span class="arrow"><i class="fas fa-arrow-right"></i></span>
             <span class="text">Envie um email de contato!</span>
         </div>
     </div>
-
-    <div id="chat-head">
-        <img src="https://i.ibb.co/qrhLFQB/fotominiaturaperfil-fernandinha.png" alt="Fernanda Marques">
-        <div id="message-indicator">1</div>
-    </div>
-    <div id="chat-window">
-        <div class="chat-header">
-            <img src="https://i.ibb.co/qrhLFQB/fotominiaturaperfil-fernandinha.png" alt="Fernanda Marques" border="0">
-            <span>Fernanda Marques<br><small>Médica (Online)</small></span>
-
-        <button id="close-chat">
-
-    <img src="https://i.ibb.co/jymBSwM/closemfundoestatic-ezgif-com-resize.png" alt="Fechar" class="static-icon">
-    <img src="https://i.ibb.co/vvKbBWB/closegifsemfundo-ezgif-com-resize.gif
-" alt="Fechar" class="animated-icon"></button>
-    </div>
-    <div class="chat-messages">
-        <div class="message-received"><p>Seja bem-vindo(a), me fale mais sobre você!Para iniciar o chat ou agendar uma consulta, é necessário realizar seu cadastro!</p><span id="current-time"></span></div>
-        <button id="btn-login" onclick="toggleLoginForm()">Já tenho uma conta</button>
-        <button id="btn-signup" onclick="toggleSignupForm()">Novo usuário</button>
-        
-        <div id="login-form" class="hidden">
-            <label for="login-email"></label>
-            <input type="email" id="login-email" placeholder="Email" required>
-            <label for="login-password"></label>
-            <input type="password" id="login-password" placeholder="Senha" required>
-            <button onclick="login()">Login</button>
+    <div class="slider-container" id="instagram">
+        <div class="slider" id="slider-instagram">
+            <img src="https://i.ibb.co/Z67H1c4r/CITYPNG-COM-HD-Square-White-Instagram-Logo-Icon-PNG-1500x1500.png" alt="Instagram">
         </div>
-        <div id="signup-form" class="hidden">
-            <label for="signup-name"></label>
-            <input type="text" id="signup-name" placeholder="Nome" required>
-            <label for="signup-email"></label>
-            <input type="email" id="signup-email" placeholder="Email" required>
-            <label for="signup-password"></label>
-            <input type="password" id="signup-password" placeholder="Senha" required>
-            <label for="signup-phone"></label>
-            <input type="tel" id="signup-phone" placeholder="Telefone para contato" required>
-            <button onclick="signup()">Cadastrar</button>
+        <div class="arrow-container">
+            <span class="arrow"><i class="fas fa-arrow-right"></i></span>
+            <span class="text">Acesse nosso Instagram!</span>
         </div>
     </div>
-</div>
 
-<script>
-    
-// Configuração do Firebase
-    var firebaseConfig = {
-      apiKey: "AIzaSyB1gGfzhehsqhc-jbpnBeANNj_3sJr-MY0",
-    authDomain: "chat-41be5.firebaseapp.com",
-    databaseURL: "https://chat-41be5-default-rtdb.firebaseio.com",
-    projectId: "chat-41be5",
-    storageBucket: "chat-41be5.appspot.com",
-    messagingSenderId: "196206788116",
-    appId: "1:196206788116:web:7a5f53b7bfaa3c4ca43101",
-    };
-
-// Inicialização do Firebase
-        const app = firebase.initializeApp(firebaseConfig);
-        const auth = firebase.auth();
-        const analytics = firebase.analytics();
-        const database = firebase.database();
-
-        // Funções de Validação
-        function validateEmail(email) {
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailPattern.test(email);
-        }
-
-        function validatePassword(password) {
-            // Exemplo de validação simples
-            return password.length >= 6;
-        }
-
-        function validatePhone(phone) {
-            // Exemplo de validação simples
-            return phone.length >= 10 && !isNaN(phone);
-        }
-
-        // Função de Login
-        function login() {
-  var email = document.getElementById('login-email').value;
-  var password = document.getElementById('login-password').value;
-
-  // ...
-
-  // Tente fazer o login com Firebase Authentication
-  firebase.auth().signInWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-      // Login bem-sucedido
-      var user = userCredential.user;
-      console.log('Usuário logado:', user);
-
-      // Aqui você pode adicionar mais ações, como verificar se o usuário está autorizado a acessar o aplicativo
-
-      // Consultar informações adicionais do usuário no banco de dados
-      var userRef = database.ref('users/' + user.uid);
-      userRef.once('value', (snapshot) => {
-        var userData = snapshot.val();
-        console.log('Dados do usuário:', userData);
-
-        // Aqui você pode fazer outras ações com as informações do usuário, como redirecionar para uma página específica
-
-        // Mensagem de sucesso
-        alert('Login bem-sucedido!');
-      });
-    })
-    .catch((error) => {
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      console.error('Erro ao logar:', errorCode, errorMessage);
-      alert('Erro ao logar: ' + errorMessage);
-    });
-}
-
-        function signup() {
-    var name = document.getElementById('signup-name').value;
-    var email = document.getElementById('signup-email').value;
-    var password = document.getElementById('signup-password').value;
-    var phone = document.getElementById('signup-phone').value;
-
-    // ...
-
-    // Código para criar o usuário com os dados fornecidos
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-            // Criação do usuário bem-sucedida
-            var user = userCredential.user;
-            console.log('Usuário criado:', user);
-
-            // Salvar informações adicionais do usuário no banco de dados
-            var userRef = database.ref('users/' + user.uid);
-            userRef.set({
-                name: name,
-                email: email,
-                phone: phone
-            });
-
-            // Mensagem de sucesso
-            alert('Cadastro realizado com sucesso!');
-        })
-        .catch((error) => {
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            console.error('Erro ao criar o usuário:', errorCode, errorMessage);
-            alert('Erro ao criar o usuário: ' + errorMessage);
-        });
-}
-    </script>
-<script class="blurred">
+    <script>
         let expandedSlider = null;
 
         function createSlider(slider, url, color) {
@@ -548,7 +176,14 @@
 
             slider.parentElement.addEventListener('click', function() {
                 if (!isDragging) {
-                    if (expandedSlider && expandedSlider !== slider.parentElement) {
+                    if (expandedSlider && expandedSlider !== slider.parentElement)
+	 {
+                       
+
+
+
+
+// Recolhe o slider expandido anteriormente
                         expandedSlider.classList.remove('expanded');
                     }
                     expandedSlider = slider.parentElement;
@@ -633,23 +268,10 @@
             function finishSliding() {
                 const containerRect = slider.parentElement.getBoundingClientRect();
                 if (parseInt(slider.style.left) >= containerRect.width / 2) {
-                    if (slider.id === 'slider-whatsapp') {
-                        document.querySelectorAll('body > :not(#chat-head):not(#chat-window)').forEach(el => el.classList.add('blurred'));
-                        const chatHead = document.getElementById('chat-head');
-                        chatHead.style.display = 'block';
-                        chatHead.classList.add('bouncing');
-                        setTimeout(() => {
-                            chatHead.style.transform = 'translate(-50%, -50%) scale(1.05)';
-                            setTimeout(() => {
-                                chatHead.style.transform = 'translate(-50%, -50%) scale(1)';
-                            }, 1000);
-                        }, 0);
-                    } else {
-                        slider.style.left = (containerRect.width - slider.offsetWidth - 5) + 'px';
-                        setTimeout(() => {
-                            window.location.href = url;
-                        }, 300);
-                    }
+                    slider.style.left = (containerRect.width - slider.offsetWidth - 5) + 'px';
+                    setTimeout(function() {
+                        window.location.href = url;
+                    }, 300);
                 } else {
                     slider.style.left = '5px';
                     resetArrowTextOpacity();
@@ -664,79 +286,13 @@
 
             function resetContainerColor() {
                 const container = slider.parentElement;
-                container.style.backgroundColor = '#dedede';
+                container.style.backgroundColor = '#e0e0e0';
             }
         }
 
-        function resetSliders() {
-    const sliders = document.querySelectorAll('.slider');
-    sliders.forEach(slider => {
-        slider.style.left = '5px';
-        const arrowContainer = slider.parentElement.querySelector('.arrow-container');
-        arrowContainer.style.opacity = '';
-        const container = slider.parentElement;
-        container.style.backgroundColor = '#dedede';
-        container.classList.remove('expanded');
-    });
-    expandedSlider = null;
-}
-
-        createSlider(document.getElementById('slider-whatsapp'), 'https://api.whatsapp.com/send?phone=5517981611178', '#25d366');
-        createSlider(document.getElementById('slider-email'), 'mailto:psiq.drafernanda@gmail.com', '#3b5998');
-
-        document.getElementById('chat-head').addEventListener('click', function() {
-            const chatHead = document.getElementById('chat-head');
-            chatHead.style.display = 'none';
-            const chatWindow = document.getElementById('chat-window');
-            chatWindow.style.display = 'block';
-            document.querySelectorAll('body > :not(#chat-head):not(#chat-window)').forEach(el => el.classList.add('blurred'));
-        });
-
-        document.getElementById('close-chat').addEventListener('click', function() {
-            const chatWindow = document.getElementById('chat-window');
-            chatWindow.style.display = 'none';
-            document.querySelectorAll('.blurred').forEach(el => el.classList.remove('blurred'));
-            resetSliders();
-        });
-
-        document.addEventListener('visibilitychange', function() {
-    if (document.visibilityState === 'visible') {
-        resetSliders();
-    }
-});
-    
-
-        // Botão function and validate here
-
-    function toggleLoginForm() {
-        const loginForm = document.getElementById('login-form');
-        const signupForm = document.getElementById('signup-form');
-        if (loginForm.classList.contains('hidden')) {
-            loginForm.classList.remove('hidden');
-            signupForm.classList.add('hidden');
-            loginForm.classList.add('fadeIn');
-            loginForm.classList.remove('fadeOut');
-        } else {
-            loginForm.classList.add('fadeOut');
-            setTimeout(() => loginForm.classList.add('hidden'), 500);
-        }
-    }
-
-function toggleSignupForm() {
-        const signupForm = document.getElementById('signup-form');
-        const loginForm = document.getElementById('login-form');
-        if (signupForm.classList.contains('hidden')) {
-            signupForm.classList.remove('hidden');
-            loginForm.classList.add('hidden');
-            signupForm.classList.add('fadeIn');
-            signupForm.classList.remove('fadeOut');
-        } else {
-            signupForm.classList.add('fadeOut');
-            setTimeout(() => signupForm.classList.add('hidden'), 500);
-        }
-
-
-</script>
-
+        createSlider(document.getElementById('slider-whatsapp'), 'https://api.whatsapp.com/send?phone=5517981421484', '#25d366');
+        createSlider(document.getElementById('slider-email'), 'mailto:clinicadepsicologia.marques@gmail.com', '#3b5998');
+        createSlider(document.getElementById('slider-instagram'), 'https://www.instagram.com/ana.marques.psicologa/', '#E4405F');
+    </script>
 </body>
 </html>
