@@ -32,15 +32,35 @@
             z-index: -1;
         }
 
-        .logo {
+         .logo {
             margin-top: 20px;
+            margin-left: 10px;
             width: 300px;
             height: 300px;
-	
+            cursor: pointer;
             border-radius: 30%;
             background: url('https://i.ibb.co/3Y1W8QSW/logo-criativar-transpawwwwwwrente-fazer-gif.gif') no-repeat center center / cover;
 	   
  	}
+
+      
+
+      
+        @keyframes bounce {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.05); }
+        }
+
+        
+
+        .slide-down {
+            animation: slide-down 1s ease-in-out forwards;
+        }
+
+        @keyframes slide-down {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(100%); }
+        }
 	    
 	
 
@@ -166,6 +186,7 @@
             <span class="text">Acesse nosso Instagram!</span>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script>
         let expandedSlider = null;
@@ -290,9 +311,20 @@
             }
         }
 
-        createSlider(document.getElementById('slider-whatsapp'), 'https://api.whatsapp.com/send?phone=5517991004783', '#25d366');
+    	createSlider(document.getElementById('slider-whatsapp'), 'https://api.whatsapp.com/send?phone=5517991004783', '#25d366');
         createSlider(document.getElementById('slider-email'), 'mailto:marques.ar1@hotmail.com', '#3b5998');
         createSlider(document.getElementById('slider-instagram'), 'https://www.instagram.com/rodrigomarquesar', '#E4405F');
-    </script>
+        $(document).ready(function() {
+            $('.logo').click(function() {
+                $(this).addClass('bounce');
+                setTimeout(function() {
+                    $('body').addClass('slide-down');
+                    setTimeout(function() {
+                        window.location.href = 'digo.html'; 
+                    }, 1000);
+                }, 1000);
+            });
+        });
+   </script>
 </body>
 </html>
