@@ -9,7 +9,9 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            background-color: #a9c1e7;
+            background: linear-gradient(180deg,  #5a73ad 12%, #8135b4 50%,#fc1717 80%, #ffe70e 100%);
+            background-size:500% 500%;
+            animation: gradient 5s ease infinite;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -17,6 +19,22 @@
             min-height: 100vh;
             position: relative;
             overflow: hidden;
+            background-blend-mode: multiply;
+            background-repeat: no-repeat;
+            background-position: 0% 0%;
+            transition: background-position 0.5s ease-out;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 0%;
+            }
+            50% {
+                background-position: 100% 100%;
+            }
+            100% {
+                background-position: 0% 0%;
+            }
         }
 
         .texture {
@@ -28,11 +46,12 @@
             height: 100%;
             background-image: url(https://i.ibb.co/Mp5fm07/image-1.png); 
             background-repeat: repeat;
-            opacity: 0.3; /* Ajuste a opacidade aqui */
+            opacity: 0.9; /* Ajuste a opacidade aqui */
             z-index: -1;
+            filter: blur(12px);
         }
 
-         .logo {
+        .logo {
             margin-top: 20px;
             margin-left: 10px;
             width: 300px;
@@ -61,7 +80,6 @@
             0% { transform: translateY(0); }
             100% { transform: translateY(100%); }
         }
-	    
 	
 
 	
@@ -311,7 +329,7 @@
             }
         }
 
-    	createSlider(document.getElementById('slider-whatsapp'), 'https://api.whatsapp.com/send?phone=5517991004783', '#25d366');
+        createSlider(document.getElementById('slider-whatsapp'), 'https://api.whatsapp.com/send?phone=5517991004783', '#25d366');
         createSlider(document.getElementById('slider-email'), 'mailto:marques.ar1@hotmail.com', '#3b5998');
         createSlider(document.getElementById('slider-instagram'), 'https://www.instagram.com/rodrigomarquesar', '#E4405F');
         $(document).ready(function() {
@@ -320,7 +338,7 @@
                 setTimeout(function() {
                     $('body').addClass('slide-down');
                     setTimeout(function() {
-                        window.location.href = 'index.html'; 
+                        window.location.href = 'digo.html'; 
                     }, 1000);
                 }, 1000);
             });
